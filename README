@@ -1,6 +1,8 @@
 Introduction
 --------------------------------------------------------------------------------
-This program takes a decision tree trained in matlab and outputs a c++ which will carry out the decision tree trained in the matlab environment.  It is useful for deploying code developed in matlab into other algorithms.  It was used in a microphone wind noise detection program.
+This program takes a decision tree trained in matlab and outputs a textfile contatining all the branch information.  This text file can be read by the containted C++ class, and then used to make decicions based on presented features in deployed applications.
+
+It is useful for deploying code developed in matlab into other algorithms, the treebagger class is not included in the matlab Coder. 
 
 Usage
 --------------------------------------------------------------------------------
