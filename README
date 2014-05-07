@@ -1,0 +1,32 @@
+Introduction
+--------------------------------------------------------------------------------
+This program takes a decision tree trained in matlab and outputs a c++ which will carry out the decision tree trained in the matlab environment.  It is useful for deploying code developed in matlab into other algorithms.  It was used in a microphone wind noise detection program.
+
+Usage
+--------------------------------------------------------------------------------
+extractDecTreeStruct.m matlab files takes as input a trained classification tree or a treebagger classification ensemble, and outputs a text file which can be read by the C++ class DTree in DecisionTreeClass.hpp.  in DTree are two methods, readTextFilesTrees reads the decision tree text file outputted by extractDecTreeStruct.m into a number of private arrays.  The method decisionTreeFun, then takes as input a series of features and outputs the class (integer number).  The files must always have the following postfix : _bag_x.txt, where x is the bag number.
+
+For any comments or questions, please email p.kendrick@salford.ac.uk
+
+/*Copyright (c) <2014> <Paul Kendrick>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+
