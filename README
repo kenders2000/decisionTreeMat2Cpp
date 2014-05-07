@@ -1,12 +1,12 @@
 Introduction
 --------------------------------------------------------------------------------
-This program takes a decision tree trained in matlab and outputs a textfile contatining all the branch information.  This text file can be read by the containted C++ class, and then used to make decicions based on presented features in deployed applications.
+This program takes a decision tree trained in Matlab using TreeBagger or the classification tree function ClassificationTree and outputs a textile containing all the branch information.  This text file can be read by the attached C++ class, and then used to make decisions based on presented features in deployed applications.
 
-It is useful for deploying code developed in matlab into other algorithms, the treebagger class is not included in the matlab Coder. 
+It is useful for deploying code developed in matlab into other applications / systems as the TreeBagger class is not included in the matlab Coder. 
 
 Usage
 --------------------------------------------------------------------------------
-extractDecTreeStruct.m matlab files takes as input a trained classification tree or a treebagger classification ensemble, and outputs a text file which can be read by the C++ class DTree in DecisionTreeClass.hpp.  in DTree are two methods, readTextFilesTrees reads the decision tree text file outputted by extractDecTreeStruct.m into a number of private arrays.  The method decisionTreeFun, then takes as input a series of features and outputs the class (integer number).  The files must always have the following postfix : _bag_x.txt, where x is the bag number.
+extractDecTreeStruct.m matlab files takes as input a trained ClassificationTree tree or a TreeBagger classification ensemble, and outputs a text file which can be read by the C++ class DTree in DecisionTreeClass.hpp.  in DTree are two methods, readTextFilesTrees reads the decision tree text file outputted by extractDecTreeStruct.m into a number of private arrays.  The method decisionTreeFun, then takes as input a series of features and outputs the class (integer number).  The files must always have the following postfix : _bag_x.txt, where x is the bag number.
 
 For any comments or questions, please email p.kendrick@salford.ac.uk
 
