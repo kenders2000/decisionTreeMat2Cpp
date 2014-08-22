@@ -154,7 +154,7 @@ filename=sprintf('%s_bag_%i.txt',prefix,bagi);
 
  DecTreeCwrite(bags,branches,storeBranchLength,storeBranchTmpL,storeBranchTmpVal,storeBranchTmpVecI,Class,filename,uniqueclasses);
 
-for ii=1:length(meas)
+for ii=1%:length(meas)
 x=meas(ii,:);
 classout=0;
 clear test
