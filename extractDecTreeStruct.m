@@ -52,7 +52,7 @@ function []=extractDecTreeStruct(b,classesunique,treebag,bags,prefix)
 % THE SOFTWARE.
 % */
 
-uniqueclasses=sort(classunique,'ascend');
+uniqueclasses=sort(classesunique,'ascend');
 % meas,species
 clear class class_out
 for bagi=1:bags
