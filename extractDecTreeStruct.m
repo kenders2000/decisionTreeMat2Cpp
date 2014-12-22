@@ -1,4 +1,4 @@
-function []=extractDecTreeStruct(b,classesunique,treebag,bags,meas,species,prefix,uniqueclasses)
+function []=extractDecTreeStruct(b,classesunique,treebag,bags,prefix)
 % 	This function takes a treebagger class, or decision tree class, and outputs a text file with all
 %	The information required to export the treebagger / classification functions
 %   inputs
@@ -6,8 +6,10 @@ function []=extractDecTreeStruct(b,classesunique,treebag,bags,meas,species,prefi
 %	classesunique : list of unique class labels (numerical)
 %	treebag : 0 for classification tree, 1 for treebagger
 %	bags : number of bags
-%	meas	: features
-%	species	 : class labels (numeric)
+%	meas	: features - Test that classifier is working with this test
+%	data
+%	species	 : class labels (numeric)- Test that classifier is working with this test
+%	data
 %	prefix : filename prefix for text file output.
 %	uniqueclasses : unique class in order (numeric)
 %	Copyright (c) <2014> <Paul Kendrick>
@@ -50,7 +52,8 @@ function []=extractDecTreeStruct(b,classesunique,treebag,bags,meas,species,prefi
 % THE SOFTWARE.
 % */
 
-
+uniqueclasses=sort(classunique,'ascend');
+% meas,species
 clear class class_out
 for bagi=1:bags
     if treebag==1
@@ -166,29 +169,30 @@ class_out(bagi,ii)=classesunique(find(classesunique==str2num(cl{1})));
 end
 
 end
-%% 
-clear count vote
-for datai=1:length(meas)
-for classi=1:length(classesunique)
-    count(datai,classi)=sum(classesunique(classi)==class_out(:,datai));
-end
-[ null Imax]=max(count(datai,:));
-[null Isorted]=sort(count(datai,:));
+%%  test classifier
 
-if sum(count(datai,Imax)==count(datai,Isorted))>1
-
-    I=find(count(datai,Imax)==count(datai,:));
-    classesunique(  I(ceil(rand()*length(I)))  );
-    
-    
-     vote(datai)=min(classesunique(I));
-%       vote(datai)=    classesunique(  I(ceil(rand()*length(I)))  );
-else
-    vote(datai)=classesunique(Imax);
-end
-    
-end
-numericlabels=species;
+% clear count vote
+% for datai=1:length(meas)
+% for classi=1:length(classesunique)
+%     count(datai,classi)=sum(classesunique(classi)==class_out(:,datai));
+% end
+% [ null Imax]=max(count(datai,:));
+% [null Isorted]=sort(count(datai,:));
+% 
+% if sum(count(datai,Imax)==count(datai,Isorted))>1
+% 
+%     I=find(count(datai,Imax)==count(datai,:));
+%     classesunique(  I(ceil(rand()*length(I)))  );
+%     
+%     
+%      vote(datai)=min(classesunique(I));
+% %       vote(datai)=    classesunique(  I(ceil(rand()*length(I)))  );
+% else
+%     vote(datai)=classesunique(Imax);
+% end
+%     
+% end
+% numericlabels=species;
 
 % sum(vote==numericlabels)/length(numericlabels)
 % 
