@@ -53,7 +53,8 @@ function []=extractDecTreeStruct(b,classesunique,treebag,bags,prefix)
 % */
 
 uniqueclasses=sort(classesunique,'ascend');
-% meas,species
+meas = b.X;
+%species = str2num(cell2mat(b.Y))';
 clear class class_out
 for bagi=1:bags
     if treebag==1

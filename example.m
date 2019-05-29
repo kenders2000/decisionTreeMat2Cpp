@@ -22,5 +22,6 @@ b = TreeBagger(bags,meas,species)
 % uniqueclasses=sort(classesunique);
 % species=speciesnum;
 
-extractDecTreeStruct(b,classesunique,1,bags,meas,species,prefix,uniqueclasses)
+%extractDecTreeStruct(b,classesunique,1,bags,meas,species,prefix,uniqueclasses)
+extractDecTreeStruct(b,classesunique,1,bags,prefix)
 % 	
